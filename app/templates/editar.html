@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+
+{% block titulo %}Citas de los Usuarios{% endblock %}
+
+{% block contenido %}
+
+<div class="row">
+    <div class="col-6">
+        <h3 class="">Edita tu USUARIO</h3>
+        <form action='/editar/{{request.session.usuario.id}}' method="POST">
+            {% csrf_token %}
+            <div class="mb-6">
+                <label for="name" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" id="name" name="name" value='{{datos.name}}' required>
+            </div>
+        
+            <div class="mb-3">
+                <label for="lastname" class="form-label">Apellido:</label>
+                <input type="text"  class="form-control" id="lastname" name="lastname" value="{{datos.lastname}}" required>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo:</label>
+                <input type="text" class="form-control" id="email" name="email" value="{{datos.email}}" required>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Editar</button>
+        </form>
+        <p><a href ="/">VOLVER</a></p>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block libreria %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

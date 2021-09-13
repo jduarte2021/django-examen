@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+
+{% block titulo %}Citas de los Usuarios{% endblock %}
+
+{% block contenido %}
+
+{% for all in usuario %}
+<h1 class="mt-5">CITAS de : {{all.name}} {{all.lastname}}</h1>
+{% endfor %}
+<div class="row mt-5">
+    <div class="col-6">
+        {% for all in citas %}
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-primary">{{all.autor}}: {{all.mensaje}}</li>
+                <li class="list-group-item list-group-item-secondary radsup">Escrita el: {{all.created_at}}</li>
+                <br>
+            </ul>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block libreria %}
+{% endblock %}
+
+
+
+
